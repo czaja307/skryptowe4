@@ -1,0 +1,24 @@
+czternasta linijka
+pietnasta linijka
+szesnasta linijka
+siedemnasta linijka
+osiemnasta linijka
+dziewietnasta linijka
+dwudziesta linijka
+dwudziesta pierwsza linijka
+dwudziesta druga linijka
+dwudziesta trzecia linijka
+dwudziesta czwarta linijka
+dwudziesta piata linijka
+dwudziesta szosta linijka
+dwudziesta siodma linijka
+dwudziesta osma linijka
+dwudziesta dziewiata linijka
+trzydziesta linijka
+trzyciesta pierwsza linijka
+trzyciesta druga linijka
+trzyciesta trzecia linijka
+trzyciesta czwarta linijka
+trzydziesta piata linijka
+trzydziesta szosta linijka
+trzydziesta siodma linijka

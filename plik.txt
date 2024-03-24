@@ -1,0 +1,20 @@
+pierwsza linijka
+druga linijka
+trzecia linijka
+czwarta linijka
+piata linijka
+szosta linijka
+siodma linijka
+osma linijka
+dziewiata linijka
+dziesiata linijka
+jedenasta linijka
+dwunasta linijka
+trzynasta linijka
+czternasta linijka
+pietnasta linijka
+szesnasta linijka
+siedemnasta linijka
+cztery
+osiem
+dziewięć
