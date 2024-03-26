@@ -1,16 +1,17 @@
 import os
 import sys
 import time
+import argparse
 
 
-def tail(filename=None, lines=10, follow=False):
+def tail(filename=None, lines=10, follow=True):
     current_position=0
     list_of_lines = []
     if filename is None:
         file = sys.stdin
     else:
         try:
-            file = open(filename, "r")
+            file = open(filename, "r", encoding="utf-8")
             file.seek(0)
         except FileNotFoundError:
             print("File not found")
@@ -50,14 +51,12 @@ def print_lines(list_of_lines, lines):
 
 if __name__ == "__main__":
     try:
-        if len(sys.argv) > 3:
-            tail(sys.argv[1], int(sys.argv[2]), bool(sys.argv[3]))
-        elif len(sys.argv) > 2:
-            tail(sys.argv[1], int(sys.argv[2]))
-        elif len(sys.argv) > 1:
-            tail(sys.argv[1])
-        else:
-            tail()
+        parser = argparse.ArgumentParser(description="Simple tail")
+        parser.add_argument("file", nargs="?", default=None, help="Filename")
+        parser.add_argument("--lines", "-n", type=int, default=10, help="Number of lines")
+        parser.add_argument("--follow", action="store_true", help="Continue after last line")
+        args = parser.parse_args()
+        tail(args.file, args.lines, args.follow)
     except TypeError:
         print("Wrong types were given")
 

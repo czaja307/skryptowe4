@@ -18,3 +18,8 @@ siedemnasta linijka
 cztery
 osiem
 dziewięć
+dziesiec
+jedenascie
+dwanascie
+trzynascie
+czternaście
