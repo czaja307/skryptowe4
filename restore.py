@@ -3,6 +3,7 @@ import os.path
 import shutil
 import subprocess
 import sys
+from datetime import datetime
 
 
 def restore(path):
@@ -14,7 +15,8 @@ def restore(path):
     if os.path.exists(saved_backups):
         with open(saved_backups, "r", newline='') as file:
             reader = csv.DictReader(file)
-            backups = list(reader)
+            backups = sorted(list(reader), key=lambda x: datetime.strptime(x['date'], '%Y-%m-%d %H:%M:%S'),
+                             reverse=True)
             if len(backups) == 0:
                 print("Brak utworzonych kopii zapasowych")
                 return
