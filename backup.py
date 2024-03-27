@@ -17,7 +17,7 @@ def create_backup(directory):
 
     subprocess.run(["zip", "-r", backup_filename, directory])
 
-    backup_dir = os.getenv("BACKUPS_DIR")
+    backup_dir = os.getenv("BACKUPS_DIR", os.getcwd() + r"\.backups")
     backup_path = os.path.join(backup_dir, backup_filename)
     shutil.move(backup_filename, backup_path)
 

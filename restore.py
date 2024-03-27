@@ -20,7 +20,7 @@ def restore(path):
                 return
             print("Otworzone kopie zapasowe:")
             for i, backup in enumerate(backups):
-                print(f"{i+1}, {backup['date']} - {backup['directory']}" )
+                print(f"{i + 1}, {backup['date']} - {backup['directory']}")
             try:
                 choice = int(input("Prosze wybrac kopie do odtworzenia"))
                 if choice < 1 or choice > len(backups):
@@ -29,20 +29,20 @@ def restore(path):
             except TypeError:
                 print("Nieprawidlowy typ")
                 return
-            backup = backups[choice-1]
+            backup = backups[choice - 1]
 
             backup_path = os.path.join(path, backup['filename'])
             shutil.rmtree(backup_path)
 
             if backup_path.endswith(".zip"):
-                subprocess.run(['unzip',backup_path])
+                subprocess.run(['unzip', backup_path])
             elif backup_path.endswith(".tar.gz"):
-                subprocess.run(['tar','xyf', backup_path])
+                subprocess.run(['tar', 'xyf', backup_path])
 
 
 if __name__ == "__main__":
     backup_dir = os.getenv("BACKUP_DIR", os.path.join(os.getcwd(), "backups"))
-    if len(sys.argv)>1:
+    if len(sys.argv) > 1:
         restore(sys.argv[1])
     else:
         restore(backup_dir)
