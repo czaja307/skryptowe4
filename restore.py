@@ -43,7 +43,7 @@ def restore(path):
 
 
 if __name__ == "__main__":
-    backup_dir = os.getenv("BACKUPS_DIR", os.path.join(os.getcwd(), "backups"))
+    backup_dir = os.getenv("BACKUPS_DIR", os.path.join(os.getcwd(), ".backups"))
     if len(sys.argv) > 1:
         restore(sys.argv[1])
     else:
