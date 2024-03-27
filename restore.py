@@ -31,9 +31,10 @@ def restore(path):
             except TypeError:
                 print("Nieprawidlowy typ")
                 return
-            backup = backups[choice - 1]
+            backup_to_restore = backups[choice - 1]
+            print(backup_to_restore)
 
-            backup_path = os.path.join(path, backup['filename'])
+            backup_path = os.path.join(path, backup_to_restore['filename'])
             shutil.rmtree(backup_path)
 
             if backup_path.endswith(".zip"):
