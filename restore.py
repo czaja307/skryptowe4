@@ -47,4 +47,6 @@ if __name__ == "__main__":
     if len(sys.argv) > 1:
         restore(sys.argv[1])
     else:
+        if not os.path.exists(backup_dir):
+            os.makedirs(backup_dir)
         restore(backup_dir)
